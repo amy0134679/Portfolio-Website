@@ -1,5 +1,8 @@
 import "./App.css";
 import myImage from "./assets/dev_art.png";
+import JavaScript from "./assets/JS.png";
+import HTMLCSS from "./assets/html_css.png";
+
 
 export default function App() {
   return (
@@ -22,7 +25,7 @@ export default function App() {
         {/* TEXT */}
         <div className="hero-text">
           <h2>Hi, I'm <span>Amy Chen</span></h2>
-          <p>Computer Science student building modern web applications.</p>
+          <p>Computer science student passionate about programming, web development, and building practical, interactive projects.</p>
 
           <div className="buttons">
             <a href="#projects" className="btn primary">View Projects</a>
@@ -43,8 +46,22 @@ export default function App() {
         <h3>About Me</h3>
         <p>
           I enjoy building clean, responsive websites using React and modern tools.
-          I'm currently learning full-stack development and improving my UI design skills.
+          I'm currently learning full-stack development and improving my UI design skills. 
+          Hover over any of the bubbles to learn about my language experience!
         </p>
+
+        {/* LANGUAGE BUBBLES */}
+        <div className="language-bubbles">
+
+          <div className="bubble">
+            <img src={JavaScript} alt="JavaScript" />
+          </div>
+
+          <div className="bubble">
+            <img src={HTMLCSS} alt="HTML CSS" />
+          </div>
+
+        </div>
       </section>
 
       {/* PROJECTS */}

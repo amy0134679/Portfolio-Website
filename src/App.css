@@ -32,10 +32,10 @@ body {
   position: sticky;
   top: 15px;
   border-radius: 20px;
+  z-index:1000;
+  background: rgba(0, 0, 0, 0);
 
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  
 }
 
 .logo {
@@ -66,6 +66,7 @@ body {
 
 /* HERO */
 .hero {
+
   min-height: 60vh;
   padding: 0 0px;
   display: flex;
@@ -100,6 +101,7 @@ body {
 
 /* IMAGE WRAPPER (IMPORTANT UPGRADE) */
 .hero-image {
+  z-index: 500;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -121,8 +123,8 @@ body {
 
 /* IMAGE */
 .hero-image img {
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   border-radius: 50%;
   object-fit: cover;
   z-index: 1;
@@ -250,5 +252,100 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.language-bubbles img {
+  width: 200px;
+  height: 200px;
+}
+.bubble {
+  width: 220px;
+  height: 230px;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border: 2px solid rgba(255, 255, 255, 0.35);
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 0 25px rgba(255, 122, 200, 0.4),
+    0 0 50px rgba(155, 123, 255, 0.2),
+    inset 0 0 15px rgba(255,255,255,0.15);
+
+  transition: transform 0.3s ease;
+
+  position: relative; 
+}
+
+.bubble::before {
+  content: "";
+
+  position: absolute;
+
+  width: 140%;
+  height: 140%;
+
+  background: radial-gradient(
+    circle,
+    rgba(255,122,200,0.5),
+    rgba(155,123,255,0.25),
+    transparent 70%
+  );
+
+  z-index: -1;
+
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.bubble {
+  animation: bubbleFloat 4s ease-in-out infinite;
+}
+
+.language-bubbles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+@keyframes bubbleFloat {
+  0% {
+    transform: translateX(-50%) translateY(0px);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-12px);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0px);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
   }
 }
