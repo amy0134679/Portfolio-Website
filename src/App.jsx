@@ -89,7 +89,7 @@ export default function App() {
       {/* CONTACT */}
       <section id="contact" className="section">
         <h3>Contact</h3>
-        <p>Email: amy@example.com</p>
+        <p>Email: amydt.chen@gmail.com</p>
       </section>
 
       {/* FOOTER */}
