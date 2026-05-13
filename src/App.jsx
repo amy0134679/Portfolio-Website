@@ -2,9 +2,39 @@ import "./App.css";
 import myImage from "./assets/dev_art.png";
 import JavaScript from "./assets/JS.png";
 import HTMLCSS from "./assets/html_css.png";
+import Java from "./assets/Java.png";
+import Vue from "./assets/Vue.png";
 
 
 export default function App() {
+
+    import { useEffect, useState } from "react";
+
+  const [activeSection, setActiveSection] = useState("about");
+
+  useEffect(() => {
+    const sections = ["about", "projects", "contact"];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.4,
+      }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <div className="app">
       {/* NAVBAR */}
@@ -12,9 +42,9 @@ export default function App() {
         <h1 className="logo">Amy<span>.</span></h1>
 
         <div className="nav-links">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a href="#about" className={activeSection === "about" ? "active" : ""}>About</a>
+          <a href="#projects" className={activeSection === "projects" ? "active" : ""}>Projects</a>
+          <a href="#contact" className={activeSection === "contact" ? "active" : ""}>Contact</a>
         </div>
       </nav>
 
@@ -53,12 +83,28 @@ export default function App() {
         {/* LANGUAGE BUBBLES */}
         <div className="language-bubbles">
 
-          <div className="bubble">
-            <img src={JavaScript} alt="JavaScript" />
+          <div className="bubble-float">
+            <div className="bubble">
+              <img src={JavaScript} alt="JavaScript" />
+            </div>
           </div>
 
-          <div className="bubble">
-            <img src={HTMLCSS} alt="HTML CSS" />
+          <div className="bubble-float">
+            <div className="bubble">
+              <img src={HTMLCSS} alt="HTML CSS" />
+            </div>
+          </div>
+
+          <div className="bubble-float">
+            <div className="bubble">
+              <img src={Java} alt="Java" />
+            </div>
+          </div>
+
+          <div className="bubble-float">
+            <div className="bubble">
+              <img src={Vue} alt="Vue" />
+            </div>
           </div>
 
         </div>
