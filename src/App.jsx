@@ -56,10 +56,11 @@ export default function App() {
         <div className="hero-text">
           <h2>Hi, I'm <span>Amy Chen</span></h2>
           <p>Computer science student passionate about programming, web development, and building practical, interactive projects.</p>
+          <p>Use your mouse or the tab key to navigate the site!.</p>
 
           <div className="buttons">
             <a href="#projects" className="btn primary">View Projects</a>
-            <a href="#contact" className="btn">Contact Me</a>
+            <a href="#about" className="btn content">Skip to Content</a>
           </div>
         </div>
 
@@ -84,25 +85,25 @@ export default function App() {
         <div className="language-bubbles">
 
           <div className="bubble-float">
-            <div className="bubble">
+            <div className="bubble" tabIndex="0">
               <img src={JavaScript} alt="JavaScript" />
             </div>
           </div>
 
           <div className="bubble-float">
-            <div className="bubble">
-              <img src={HTMLCSS} alt="HTML CSS" />
+            <div className="bubble" tabIndex="0">
+              <img src={HTMLCSS} alt="HTML CSS"/>
             </div>
           </div>
 
           <div className="bubble-float">
-            <div className="bubble">
-              <img src={Java} alt="Java" />
+            <div className="bubble" tabIndex="0">
+              <img src={Java} alt="Java"/>
             </div>
           </div>
 
           <div className="bubble-float">
-            <div className="bubble">
+            <div className="bubble" tabIndex="0">
               <img src={Vue} alt="Vue" />
             </div>
           </div>
@@ -115,17 +116,17 @@ export default function App() {
         <h3>Projects</h3>
 
         <div className="grid">
-          <div className="card">
+          <div className="card" tabIndex="0">
             <h4>Movie App</h4>
             <p>Search movies using an API with a clean UI.</p>
           </div>
 
-          <div className="card">
+          <div className="card" tabIndex="0">
             <h4>Portfolio Website</h4>
             <p>This website built with React + Vite.</p>
           </div>
 
-          <div className="card">
+          <div className="card" tabIndex="0">
             <h4>Java Project</h4>
             <p>Object-oriented programming practice project.</p>
           </div>
@@ -133,9 +134,12 @@ export default function App() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="section">
-        <h3>Contact</h3>
-        <p>Email: amydt.chen@gmail.com</p>
+      <section id="contact" className="section" tabIndex="0">
+        <h3>Thanks for Stopping by!</h3>
+        <h2>Like my work and want to connect?</h2>
+        <p>Email: amydt.chen@gmail.com </p>
+        <p>GitHub: https://github.com/amy0134679</p>
+
       </section>
 
       {/* FOOTER */}
