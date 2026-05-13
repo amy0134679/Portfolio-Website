@@ -4,16 +4,15 @@ import JavaScript from "./assets/JS.png";
 import HTMLCSS from "./assets/html_css.png";
 import Java from "./assets/Java.png";
 import Vue from "./assets/Vue.png";
+import { useEffect, useState } from "react";
 
 
 export default function App() {
 
-    import { useEffect, useState } from "react";
-
   const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {
-    const sections = ["about", "projects", "contact"];
+    const sections = ["home", "about", "projects", "contact"];
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -42,6 +41,7 @@ export default function App() {
         <h1 className="logo">Amy<span>.</span></h1>
 
         <div className="nav-links">
+          <a href="#home" className={activeSection === "home" ? "active" : ""}>Home</a>
           <a href="#about" className={activeSection === "about" ? "active" : ""}>About</a>
           <a href="#projects" className={activeSection === "projects" ? "active" : ""}>Projects</a>
           <a href="#contact" className={activeSection === "contact" ? "active" : ""}>Contact</a>
@@ -49,7 +49,7 @@ export default function App() {
       </nav>
 
       {/* HERO */}
-    <section className="hero">
+      <section id="home" className="hero">
       <div className="hero-content">
 
         {/* TEXT */}
