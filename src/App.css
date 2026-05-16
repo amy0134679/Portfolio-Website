@@ -312,6 +312,7 @@ section {
 }
 
 .card:focus,
+.card:hover,
 .card:focus-visible {
   outline: none;
 
