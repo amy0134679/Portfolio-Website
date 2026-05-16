@@ -45,6 +45,7 @@ export default function App() {
           <a href="#about" className={activeSection === "about" ? "active" : ""}>About</a>
           <a href="#projects" className={activeSection === "projects" ? "active" : ""}>Projects</a>
           <a href="#contact" className={activeSection === "contact" ? "active" : ""}>Contact</a>
+
         </div>
       </nav>
 
@@ -56,7 +57,8 @@ export default function App() {
         <div className="hero-text">
           <h2>Hi, I'm <span>Amy Chen</span></h2>
           <p>Computer science student passionate about programming, web development, and building practical, interactive projects.</p>
-          <p>Use your mouse or the tab key to navigate the site!.</p>
+          <br />
+          <p>Explore the site with your mouse or the Tab key.</p>
 
           <div className="buttons">
             <a href="#projects" className="btn primary">View Projects</a>
@@ -66,7 +68,7 @@ export default function App() {
 
         {/* IMAGE */}
         <div className="hero-image">
-          <img src={myImage} alt="Amy" />
+          <img src={myImage} alt="Pixel Portrait of Amy Chen" />
         </div>
 
       </div>
@@ -133,14 +135,60 @@ export default function App() {
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="section" tabIndex="0">
-        <h3>Thanks for Stopping by!</h3>
-        <h2>Like my work and want to connect?</h2>
-        <p>Email: amydt.chen@gmail.com </p>
-        <p>GitHub: https://github.com/amy0134679</p>
+{/* CONTACT */}
+<section id="contact" className="section contact-section" tabIndex="0">
 
-      </section>
+  <div className="contact-container">
+
+    {/* LEFT SIDE */}
+    <div className="contact-left">
+      <p className="contact-tag">Let’s Connect ✨</p>
+
+      <h2>Thanks for stopping by!</h2>
+
+      <p className="contact-text">
+        If you liked my work or want to collaborate, feel free to
+        reach out. I’m always open to new opportunities and creative
+        projects.
+      </p>
+    </div>
+
+    {/* RIGHT SIDE */}
+    <div className="contact-right">
+
+      <div className="contact-buttons">
+        <a
+          href="mailto:amydt.chen@gmail.com"
+          className="btn primary"
+        >
+          Email Me
+        </a>
+
+        <a
+          href="https://github.com/amy0134679"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn"
+        >
+          View GitHub
+        </a>
+      </div>
+
+      <div className="contact-info">
+        <p>
+          <strong>Email:</strong> amydt.chen@gmail.com
+        </p>
+
+        <p>
+          <strong>GitHub:</strong> github.com/amy0134679
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
       {/* FOOTER */}
       <footer className="footer">
