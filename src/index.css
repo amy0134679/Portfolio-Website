@@ -67,9 +67,35 @@ body {
 
 h1,
 h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+  font-size: 6rem;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+  padding: 1rem;
+
+  background: linear-gradient(90deg, #ff7ac8, #9b7bff, #491b72);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+
+  text-shadow: 0 0 12px rgba(255, 122, 200, 0.35);
+  animation: shimmer 7s ease-in-out infinite,
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+    text-shadow: 0 0 10px rgba(255, 122, 200, 0.25);
+  }
+  50% {
+    background-position: 100% center;
+    text-shadow: 0 0 18px rgba(155, 123, 255, 0.4);
+  }
+  100% {
+    background-position: 0% center;
+    text-shadow: 0 0 10px rgba(255, 122, 200, 0.25);
+  }
 }
 
 h1 {

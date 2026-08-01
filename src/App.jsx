@@ -4,6 +4,8 @@ import JavaScript from "./assets/JS.png";
 import HTMLCSS from "./assets/html_css.png";
 import Java from "./assets/Java.png";
 import Vue from "./assets/Vue.png";
+import Github from "./assets/github.png";
+import Email from "./assets/email.png";
 import { useEffect, useState } from "react";
 
 
@@ -137,58 +139,62 @@ export default function App() {
 
 {/* CONTACT */}
 <section id="contact" className="section contact-section" tabIndex="0">
-
   <div className="contact-container">
 
     {/* LEFT SIDE */}
     <div className="contact-left">
-      <p className="contact-tag">Let’s Connect ✨</p>
 
-      <h2>Thanks for stopping by!</h2>
+      <h2 className="contact-tag">LET’S CONNECT</h2>
 
       <p className="contact-text">
-        If you liked my work or want to collaborate, feel free to
-        reach out. I’m always open to new opportunities and creative
-        projects.
+          Thanks for taking the time to explore my portfolio. If you’d like to collaborate, chat about software development, or discuss an internship or new opportunity, I’d love to hear from you.
+          Feel free to reach out by email or connect with me on GitHub.
       </p>
     </div>
 
     {/* RIGHT SIDE */}
-    <div className="contact-right">
+    <div className="contact-card">
 
-      <div className="contact-buttons">
-        <a
-          href="mailto:amydt.chen@gmail.com"
-          className="btn primary"
-        >
-          Email Me
-        </a>
+      <a
+        href="mailto:amydt.chen@gmail.com"
+        className="contact-item"
+      >
+        <img
+          src={Email}
+          alt="Email icon"
+          className="contact-icon"
+        />
 
-        <a
-          href="https://github.com/amy0134679"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn"
-        >
-          View GitHub
-        </a>
-      </div>
+        <div>
+          <span>Email</span>
+          <strong>amydt.chen@gmail.com</strong>
+        </div>
+      </a>
 
-      <div className="contact-info">
-        <p>
-          <strong>Email:</strong> amydt.chen@gmail.com
-        </p>
+      <a
+        href="https://github.com/amy0134679"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="contact-item"
+      >
+        <img
+          src={Github}
+          alt="GitHub icon"
+          className="contact-icon"
+        />
 
-        <p>
-          <strong>GitHub:</strong> github.com/amy0134679
-        </p>
-      </div>
+        <div>
+          <span>GitHub</span>
+          <strong>github.com/amy0134679</strong>
+        </div>
+      </a>
 
     </div>
 
   </div>
-
 </section>
+```
+
 
       {/* FOOTER */}
       <footer className="footer">
