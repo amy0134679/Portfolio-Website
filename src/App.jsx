@@ -10,6 +10,18 @@ import { useEffect, useState } from "react";
 
 
 export default function App() {
+  //copy email on click
+  const [emailCopied, setEmailCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("amydt.chen@gmail.com");
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 1500);
+    } catch (err) {
+      console.error("Copy failed:", err);
+    }
+  };
 
   const [activeSection, setActiveSection] = useState("about");
 
@@ -25,7 +37,8 @@ export default function App() {
         });
       },
       {
-        threshold: 0.4,
+        threshold: 0.2,
+        rootMargin: "-20% 0px -40% 0px",
       }
     );
 
@@ -155,21 +168,22 @@ export default function App() {
     {/* RIGHT SIDE */}
     <div className="contact-card">
 
-      <a
-        href="mailto:amydt.chen@gmail.com"
-        className="contact-item"
-      >
-        <img
-          src={Email}
-          alt="Email icon"
-          className="contact-icon"
-        />
+        <button
+          type="button"
+          className="contact-item contact-button"
+          onClick={copyEmail}
+        >
+          <img
+            src={Email}
+            alt="Email icon"
+            className="contact-icon"
+          />
 
-        <div>
-          <span>Email</span>
-          <strong>amydt.chen@gmail.com</strong>
-        </div>
-      </a>
+          <div>
+            <span>Email</span>
+            <strong>{emailCopied ? "Copied!" : "amydt.chen@gmail.com"}</strong>
+          </div>
+        </button>
 
       <a
         href="https://github.com/amy0134679"
@@ -193,7 +207,8 @@ export default function App() {
 
   </div>
 </section>
-```
+
+
 
 
       {/* FOOTER */}
