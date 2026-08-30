@@ -13,6 +13,7 @@ import DressUpGame from "./components/DressUpGame";
 export default function App() {
   //copy email on click
   const [emailCopied, setEmailCopied] = useState(false);
+  const [gameOpen, setGameOpen] = useState(false);
 
   const copyEmail = async () => {
     try {
@@ -68,7 +69,6 @@ export default function App() {
       {/* HERO */}
       <section id="home" className="hero">
       <div className="hero-content">
-        <DressUpGame />
 
         {/* TEXT */}
         <div className="hero-text">
@@ -129,28 +129,103 @@ export default function App() {
 
         </div>
       </section>
+{/* PROJECTS */}
+<section id="projects" className="section">
+  <h3>Projects</h3>
 
-      {/* PROJECTS */}
-      <section id="projects" className="section">
-        <h3>Projects</h3>
+  <div className="grid">
 
-        <div className="grid">
-          <div className="card" tabIndex="0">
-            <h4>Movie App</h4>
-            <p>Search movies using an API with a clean UI.</p>
-          </div>
+    {/* DRESS-UP GAME */}
+    <div className="card project-card" tabIndex="0">
 
-          <div className="card" tabIndex="0">
-            <h4>Portfolio Website</h4>
-            <p>This website built with React + Vite.</p>
-          </div>
+      <div className="game-preview">
+        <DressUpGame preview />
+      </div>
 
-          <div className="card" tabIndex="0">
-            <h4>Java Project</h4>
-            <p>Object-oriented programming practice project.</p>
-          </div>
-        </div>
-      </section>
+      <div className="project-info">
+        <h4>Dress-Up Game</h4>
+
+        <p>
+          An interactive character dress-up game with customizable
+          outfits and accessories.
+        </p>
+
+        <button
+          className="play-button"
+          onClick={() => setGameOpen(true)}
+        >
+          Play Game →
+        </button>
+      </div>
+
+    </div>
+
+
+    {/* MOVIE APP */}
+    <div className="card project-card" tabIndex="0">
+
+      <div className="project-preview">
+        🎬
+      </div>
+
+      <div className="project-info">
+        <h4>Movie App</h4>
+
+        <p>
+          A movie library featuring search, sorting, and browsing
+          using the TMDB API.
+        </p>
+
+        <span>View Project →</span>
+      </div>
+
+    </div>
+
+
+    {/* PORTFOLIO */}
+    <div className="card project-card" tabIndex="0">
+
+      <div className="project-preview">
+        💻
+      </div>
+
+      <div className="project-info">
+        <h4>Portfolio Website</h4>
+
+        <p>
+          A responsive portfolio built with React and Vite.
+        </p>
+
+        <span>View Project →</span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  {/* GAME MODAL */}
+  {gameOpen && (
+    <div className="game-modal">
+
+      <div className="game-window">
+
+        <button
+          className="close-game"
+          onClick={() => setGameOpen(false)}
+          aria-label="Close game"
+        >
+          ×
+        </button>
+
+        <DressUpGame />
+
+      </div>
+
+    </div>
+  )}
+
+</section>
 
 {/* CONTACT */}
 <section id="contact" className="section contact-section" tabIndex="0">

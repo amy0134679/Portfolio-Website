@@ -1,28 +1,60 @@
 import { useState } from "react";
 import "./DressUpGame.css";
 
+const BACKGROUND_COLORS = [
+  { name: "Blueberry", value: "#94E4F7" },
+  { name: "Taro", value: "#E5D9FA" },
+  { name: "Matcha", value: "#D0E6C1" },
+  { name: "Strawberry", value: "#FFEBF0" },
+];
+
 function DressUpGame() {
   const [outfit, setOutfit] = useState(0);
-  const [hasBoba, setHasBoba] = useState(false);
-  const [background, setBackground] = useState("#94E4F7");
+  const [background, setBackground] = useState(BACKGROUND_COLORS[0].value);
 
   const changeOutfit = () => {
     setOutfit((outfit + 1) % 3);
   };
 
   const changeBackground = () => {
-    const colors = ["#94E4F7", "#E5D9FA", "#D0E6C1", "#FFEBF0"];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    const randomColor =
+      BACKGROUND_COLORS[Math.floor(Math.random() * BACKGROUND_COLORS.length)].value;
     setBackground(randomColor);
   };
 
   return (
     <div className="dress-up-game">
+        
       <div
         className="game-display"
         style={{ backgroundColor: background }}
         onClick={changeBackground}
       >
+        <div className="cloud cloud-1" aria-hidden="true">
+          <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="30" cy="35" rx="20" ry="15" />
+            <ellipse cx="55" cy="24" rx="24" ry="19" />
+            <ellipse cx="78" cy="35" rx="18" ry="14" />
+            <rect x="14" y="30" width="72" height="20" rx="10" />
+          </svg>
+        </div>
+        <div className="cloud cloud-2" aria-hidden="true">
+          <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="30" cy="35" rx="20" ry="15" />
+            <ellipse cx="55" cy="24" rx="24" ry="19" />
+            <ellipse cx="78" cy="35" rx="18" ry="14" />
+            <rect x="14" y="30" width="72" height="20" rx="10" />
+          </svg>
+        </div>
+        <div className="cloud cloud-3" aria-hidden="true">
+          <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="30" cy="35" rx="20" ry="15" />
+            <ellipse cx="55" cy="24" rx="24" ry="19" />
+            <ellipse cx="78" cy="35" rx="18" ry="14" />
+            <rect x="14" y="30" width="72" height="20" rx="10" />
+          </svg>
+        </div>
+
         <svg className="character" viewBox="0 0 200 350" xmlns="http://www.w3.org/2000/svg">
           {/* SHADOW */}
           <ellipse cx="100" cy="315" rx="100" ry="25" fill="rgba(0,0,0,0.2)" />
@@ -34,7 +66,7 @@ function DressUpGame() {
           {/* ARMS (bare, behind sleeves) */}
           <line x1="50" y1="160" x2="30" y2="230" stroke="#FFD1BF" strokeWidth="25" strokeLinecap="round" />
           <line x1="150" y1="160" x2="180" y2="230" stroke="#FFD1BF" strokeWidth="25" strokeLinecap="round" />
-
+        
           {/* BODY / OUTFITS */}
           {outfit === 0 && (
             <>
@@ -141,14 +173,37 @@ function DressUpGame() {
           {/* SHOES */}
           <ellipse cx="70" cy="307" rx="20" ry="7.5" fill="black" />
           <ellipse cx="130" cy="307" rx="20" ry="7.5" fill="black" />
-
         </svg>
       </div>
 
       <div className="game-controls">
         <h2>DRESS UP GAME</h2>
-        <p>Click the game to change the background!</p>
-        <button onClick={changeOutfit}>Change Outfit</button>
+
+        <button className="outfit-button" onClick={changeOutfit}>
+         Change Outfit
+        </button>
+
+        <div className="pearl-picker">
+          <div className="pearl-picker-header">
+            <span className="pearl-picker-label">Pick a sky</span>
+            <button type="button" className="shuffle-button" onClick={changeBackground}>
+              🔀
+            </button>
+          </div>
+          <div className="pearl-row">
+            {BACKGROUND_COLORS.map((color) => (
+              <button
+                key={color.value}
+                type="button"
+                className={`pearl${background === color.value ? " active" : ""}`}
+                style={{ backgroundColor: color.value }}
+                onClick={() => setBackground(color.value)}
+                aria-label={color.name}
+                title={color.name}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
