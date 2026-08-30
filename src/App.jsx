@@ -7,6 +7,7 @@ import Vue from "./assets/Vue.png";
 import Github from "./assets/github.png";
 import Email from "./assets/email.png";
 import { useEffect, useState } from "react";
+import DressUpGame from "./components/DressUpGame";
 
 
 export default function App() {
@@ -67,6 +68,7 @@ export default function App() {
       {/* HERO */}
       <section id="home" className="hero">
       <div className="hero-content">
+        <DressUpGame />
 
         {/* TEXT */}
         <div className="hero-text">

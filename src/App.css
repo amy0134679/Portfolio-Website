@@ -139,7 +139,7 @@ flex-wrap: wrap;
   border: none;
   background: transparent;
   padding: 3 rem;
-  text-align: center;
+  text-align: \enter;
   align-items: center;
   cursor: pointer;
   font: inherit;

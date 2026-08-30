@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Quicksand:wght@500;600;700&display=swap');
+
+:root {
+  --color-panel: #FFF7FB;
+  --color-panel-alt: #F3ECFF;
+  --color-primary: #FF8FAB;
+  --color-primary-dark: #E8638A;
+  --color-text: #4A3B5C;
+  --color-text-soft: #8B7FA0;
+  --shadow-soft: 0 20px 40px -12px rgba(74, 59, 92, 0.25);
+}
+
+.dress-up-game {
+  width: 500px;
+  max-width: 100%;
+  margin: 40px auto;
+  font-family: 'Quicksand', Arial, sans-serif;
+  text-align: center;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background: var(--color-panel);
+}
+
+/* GAME DISPLAY — the "drink dome" */
+.game-display {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.game-display::before,
+.game-display::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.game-display::before {
+  width: 90px;
+  height: 34px;
+  top: 14%;
+  left: -20px;
+  animation: drift-cloud 22s linear infinite;
+}
+
+.game-display::after {
+  width: 60px;
+  height: 24px;
+  top: 30%;
+  animation: drift-cloud 30s linear infinite;
+  animation-delay: -10s;
+}
+
+@keyframes drift-cloud {
+  from { transform: translateX(-10%); }
+  to { transform: translateX(560px); }
+}
+
+.character {
+  width: 200px;
+  height: 350px;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 12px 10px rgba(0, 0, 0, 0.15));
+}
+
+/* CONTROLS — the "cup" */
+.game-controls {
+  position: relative;
+  background: var(--color-panel-alt);
+  padding: 28px 24px 26px;
+  box-sizing: border-box;
+}
+
+/* scalloped rim between the drink and the cup */
+.game-controls::before {
+  content: "";
+  position: absolute;
+  top: -19px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'%3E%3Cpath d='M0 20 Q 12.5 0 25 20 T 50 20 T 75 20 T 100 20 V20 H0 Z' fill='%23F3ECFF'/%3E%3C/svg%3E") repeat-x;
+  background-size: 100px 20px;
+}
+
+.game-controls h2 {
+  font-family: 'Baloo 2', 'Quicksand', sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.5px;
+  margin: 0 0 4px;
+  color: var(--color-text);
+}
+
+.game-controls p {
+  margin: 0 0 18px;
+  font-size: 13.5px;
+  color: var(--color-text-soft);
+}
+
+.outfit-button {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: white;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 8px 16px -6px rgba(232, 99, 138, 0.55);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.outfit-button:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 20px -6px rgba(232, 99, 138, 0.6);
+}
+
+.outfit-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.outfit-name {
+  display: block;
+  margin-top: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-text-soft);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* PEARL PICKER — tap a "boba pearl" to set the background color directly */
+.pearl-picker {
+  margin-top: 22px;
+}
+
+.pearl-picker-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 10px;
+}
+
+.pearl-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.pearl {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-shadow:
+    inset -3px -3px 5px rgba(0, 0, 0, 0.15),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.5),
+    0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease, outline-color 0.15s ease;
+}
+
+.pearl:hover {
+  transform: translateY(-3px);
+}
+
+.pearl.active {
+  outline: 3px solid var(--color-text);
+  outline-offset: 3px;
+}
+
+.radio-options {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.radio-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  background: white;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(74, 59, 92, 0.1);
+}
+
+.radio-options input {
+  accent-color: var(--color-primary-dark);
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-display::before,
+  .game-display::after {
+    animation: none;
+  }
+}
