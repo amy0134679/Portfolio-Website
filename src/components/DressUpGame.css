@@ -2,7 +2,7 @@
 
 :root {
   --color-panel: #FFF7FB;
-  --color-panel-alt: rgba(216, 205, 205, 0.25);
+  --color-panel-alt: rgba(7, 1, 17, 0.3);
   --color-primary: #FF8FAB;
   --color-primary-dark: #E8638A;
   --color-text: #4A3B5C;
@@ -53,30 +53,30 @@
 }
 
 .cloud-1 {
-  width: 130px;
-  height: 98px;
+  width: 230px;
+  height: 198px;
   top: 12%;
-  left: -150px;
-  animation: drift-cloud 100s linear infinite;
+  left: -10px;
+  animation: drift-cloud 50s linear infinite;
 }
 
 .cloud-2 {
-  width: 94px;
-  height: 70px;
+  width: 194px;
+  height: 170px;
   top: 42%;
-  left: -10px;
+  left: -30px;
   opacity: 0.8;
   animation: drift-cloud 80s linear infinite;
-  animation-delay: -4s;
+  animation-delay: -1s;
 }
 
 .cloud-3 {
-  width: 162px;
+  width: 132px;
   height: 70px;
   top: 6%;
   left: -90px;
   opacity: 0.65;
-  animation: drift-cloud 50s linear infinite;
+  animation: drift-cloud 30s linear infinite;
   animation-delay: -6s;
 }
 
