@@ -463,26 +463,35 @@ export default function App() {
 
               {selectedProject === "movie" && (
                 <>
-                  <h2>Movie App</h2>
-
                   <h4>About the Project</h4>
 
                   <p>
-                    I built this application to practice working with APIs and
-                    displaying dynamic information in a responsive interface.
+                    I built this app to practise working with APIs to make 
+                    a realistic and practical website. Throughout my development 
+                    process I added several elements to improve the usability and function 
+                    such as Google account supported logins where past information is 
+                    stored on a cloud for easy future access.
+
                   </p>
 
                   <h4>What I Learned</h4>
 
                   <p>
                     I learned how to fetch data from the TMDB API, handle search
-                    results, and organize movie data.
+                    results, and organize movie data. I also conducted usability 
+                    testing on my portfolio website to evaluate navigation, 
+                    accessibility, and overall user experience, making iterative
+                    design improvements based on findings.
                   </p>
 
                   <div className="project-tech">
                     <span>Vue</span>
                     <span>JavaScript</span>
+                    <span>CSS</span>
+                    <span>Vite</span>
                     <span>TMDB API</span>
+                    <span>Pinia</span>
+                    <span>Firebase</span>
                   </div>
                 </>
               )}
