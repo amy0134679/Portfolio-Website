@@ -18,13 +18,13 @@ function DressUpGame() {
 
   const changeBackground = () => {
     const randomColor =
-      BACKGROUND_COLORS[Math.floor(Math.random() * BACKGROUND_COLORS.length)].value;
+      BACKGROUND_COLORS[Math.floor(Math.random() * BACKGROUND_COLORS.length)]
+        .value;
     setBackground(randomColor);
   };
 
   return (
     <div className="dress-up-game">
-        
       <div
         className="game-display"
         style={{ backgroundColor: background }}
@@ -55,7 +55,11 @@ function DressUpGame() {
           </svg>
         </div>
 
-        <svg className="character" viewBox="0 0 200 350" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          className="character"
+          viewBox="0 0 200 350"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           {/* SHADOW */}
           <ellipse cx="100" cy="315" rx="100" ry="25" fill="rgba(0,0,0,0.2)" />
 
@@ -64,20 +68,65 @@ function DressUpGame() {
           <rect x="10" y="65" width="180" height="180" fill="#4D3629" />
 
           {/* ARMS (bare, behind sleeves) */}
-          <line x1="50" y1="160" x2="30" y2="230" stroke="#FFD1BF" strokeWidth="25" strokeLinecap="round" />
-          <line x1="150" y1="160" x2="180" y2="230" stroke="#FFD1BF" strokeWidth="25" strokeLinecap="round" />
-        
+          <line
+            x1="50"
+            y1="160"
+            x2="30"
+            y2="230"
+            stroke="#FFD1BF"
+            strokeWidth="25"
+            strokeLinecap="round"
+          />
+          <line
+            x1="150"
+            y1="160"
+            x2="180"
+            y2="230"
+            stroke="#FFD1BF"
+            strokeWidth="25"
+            strokeLinecap="round"
+          />
+
           {/* BODY / OUTFITS */}
           {outfit === 0 && (
             <>
               <rect x="50" y="140" width="100" height="110" fill="white" />
-              <line x1="50" y1="154" x2="30" y2="230" stroke="white" strokeWidth="25" strokeLinecap="round" />
-              <line x1="150" y1="154" x2="180" y2="230" stroke="white" strokeWidth="25" strokeLinecap="round" />
+              <line
+                x1="50"
+                y1="154"
+                x2="30"
+                y2="230"
+                stroke="white"
+                strokeWidth="25"
+                strokeLinecap="round"
+              />
+              <line
+                x1="150"
+                y1="154"
+                x2="180"
+                y2="230"
+                stroke="white"
+                strokeWidth="25"
+                strokeLinecap="round"
+              />
               {/* HANDS drawn after sleeves — pie slices matching Java's
                   fillArc(x+16, y+220, 25, 25, 155°, 180°) / fillArc(x+170, y+220, 25, 25, 200°, 180°) */}
-              <path d="M 17.17 227.22 A 12.5 12.5 0 0 0 39.83 237.78 Z" fill="#FFD1BF" />
-              <path d="M 170.75 236.78 A 12.5 12.5 0 0 0 194.25 228.23 Z" fill="#FFD1BF" />
-              <line x1="100" y1="140" x2="100" y2="250" stroke="#C4B7AD" strokeWidth="3" />
+              <path
+                d="M 17.17 227.22 A 12.5 12.5 0 0 0 39.83 237.78 Z"
+                fill="#FFD1BF"
+              />
+              <path
+                d="M 170.75 236.78 A 12.5 12.5 0 0 0 194.25 228.23 Z"
+                fill="#FFD1BF"
+              />
+              <line
+                x1="100"
+                y1="140"
+                x2="100"
+                y2="250"
+                stroke="#C4B7AD"
+                strokeWidth="3"
+              />
               <circle cx="92" cy="170" r="3" fill="#C4B7AD" />
               <circle cx="92" cy="190" r="3" fill="#C4B7AD" />
               <circle cx="92" cy="210" r="3" fill="#C4B7AD" />
@@ -161,14 +210,36 @@ function DressUpGame() {
           <circle cx="133" cy="90" r="3.5" fill="#4D3629" />
 
           {/* EYEBROWS */}
-          <line x1="60" y1="80" x2="70" y2="80" stroke="#4D3629" strokeWidth="2" />
-          <line x1="130" y1="80" x2="140" y2="80" stroke="#4D3629" strokeWidth="2" />
+          <line
+            x1="60"
+            y1="80"
+            x2="70"
+            y2="80"
+            stroke="#4D3629"
+            strokeWidth="2"
+          />
+          <line
+            x1="130"
+            y1="80"
+            x2="140"
+            y2="80"
+            stroke="#4D3629"
+            strokeWidth="2"
+          />
 
           {/* NOSE */}
           <circle cx="100" cy="100" r="2.5" fill="#8F6859" />
 
           {/* MOUTH */}
-          <line x1="90" y1="120" x2="110" y2="120" stroke="#8F6859" strokeWidth="2" strokeLinecap="round" />
+          <line
+            x1="90"
+            y1="120"
+            x2="110"
+            y2="120"
+            stroke="#8F6859"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
 
           {/* SHOES */}
           <ellipse cx="70" cy="307" rx="20" ry="7.5" fill="black" />
@@ -180,13 +251,17 @@ function DressUpGame() {
         <h2>DRESS UP GAME</h2>
 
         <button className="outfit-button" onClick={changeOutfit}>
-         Change Outfit
+          Change Outfit
         </button>
 
         <div className="pearl-picker">
           <div className="pearl-picker-header">
             <span className="pearl-picker-label">Pick a sky</span>
-            <button type="button" className="shuffle-button" onClick={changeBackground}>
+            <button
+              type="button"
+              className="shuffle-button"
+              onClick={changeBackground}
+            >
               🔀
             </button>
           </div>

@@ -11,8 +11,8 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -59,7 +59,8 @@ body {
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-inline: 1px solid transparent;  min-height: 100svh;
+  border-inline: 1px solid transparent;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -80,7 +81,7 @@ h2 {
   background-size: 200% auto;
 
   text-shadow: 0 0 12px rgba(255, 122, 200, 0.35);
-  animation: shimmer 7s ease-in-out infinite,
+  animation: shimmer 7s ease-in-out infinite;
 }
 
 @keyframes shimmer {
@@ -118,7 +119,6 @@ h2 {
 }
 p {
   margin: 0;
-    
 }
 
 code,
