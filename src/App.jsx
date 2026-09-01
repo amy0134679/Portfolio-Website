@@ -1,24 +1,21 @@
 import "./App.css";
-
+import SkillsSection from "./components/SkillsSection";
 import myImage from "./assets/dev_art.png";
-import JavaScript from "./assets/JS.png";
-import HTMLCSS from "./assets/html_css.png";
-import Java from "./assets/Java.png";
-import Vue from "./assets/Vue.png";
-import Github from "./assets/github.png";
 import Email from "./assets/email.png";
 import DressUpPrev from "./assets/dress_up_preview.png";
 import PortfolioPrev from "./assets/Portfolio_preview.png";
 import TLMPrev from "./assets/TLM.png";
+import Github from "./assets/github.png";
 
-import { useEffect, useState } from "react";
+
+import { useEffect, useState, useRef } from "react";
 import DressUpGame from "./components/DressUpGame";
 
 export default function App() {
   const [emailCopied, setEmailCopied] = useState(false);
   const [gameOpen, setGameOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [activeSection, setActiveSection] = useState("about");
+  const [activeSection, setActiveSection] = useState("skills");
 
   const MOVIE_SITE_URL = "https://totally-legit-movies-eight.vercel.app/";
 
@@ -45,7 +42,7 @@ export default function App() {
   ========================= */
 
   useEffect(() => {
-    const sections = ["home", "about", "projects", "contact"];
+    const sections = ["home", "skills", "projects", "contact"];
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -102,10 +99,10 @@ export default function App() {
           </a>
 
           <a
-            href="#about"
-            className={activeSection === "about" ? "active" : ""}
+            href="#skills"
+            className={activeSection === "skills" ? "active" : ""}
           >
-            About
+            Skills
           </a>
 
           <a
@@ -138,6 +135,8 @@ export default function App() {
             <p>
               Computer science student passionate about programming, web
               development, and building practical, interactive projects.
+              I enjoy building clean, responsive websites using React and modern tools.
+              I'm currently learning full-stack development and improving my UI design skills.
             </p>
 
             <br />
@@ -149,7 +148,7 @@ export default function App() {
                 View Projects
               </a>
 
-              <a href="#about" className="btn content">
+              <a href="#skills" className="btn content">
                 Skip to Content
               </a>
             </div>
@@ -162,46 +161,13 @@ export default function App() {
       </section>
 
       {/* =========================
-          ABOUT
+          SKILLS
       ========================= */}
 
-      <section id="about" className="section">
-        <h3>About Me</h3>
-
-        <p>
-          I enjoy building clean, responsive websites using React and modern
-          tools. I'm currently learning full-stack development and improving my
-          UI design skills. Hover over any of the bubbles to learn about my
-          language experience!
-        </p>
-
-        {/* LANGUAGE BUBBLES */}
-
-        <div className="language-bubbles">
-          <div className="bubble-float">
-            <div className="bubble" tabIndex="0">
-              <img src={JavaScript} alt="JavaScript" />
-            </div>
-          </div>
-
-          <div className="bubble-float">
-            <div className="bubble" tabIndex="0">
-              <img src={HTMLCSS} alt="HTML and CSS" />
-            </div>
-          </div>
-
-          <div className="bubble-float">
-            <div className="bubble" tabIndex="0">
-              <img src={Java} alt="Java" />
-            </div>
-          </div>
-
-          <div className="bubble-float">
-            <div className="bubble" tabIndex="0">
-              <img src={Vue} alt="Vue" />
-            </div>
-          </div>
-        </div>
+      <section id="skills" className="section">
+ 
+        <SkillsSection />
+        
       </section>
 
       {/* =========================

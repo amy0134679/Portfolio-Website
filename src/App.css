@@ -517,16 +517,16 @@ display: flex;
 justify-content: center;
 align-items: center;
 
-gap: 40px;
+gap: 30px;
 
-margin-top: 40px;
+margin-top: 30px;
 
 flex-wrap: wrap;
 }
 
 .language-bubbles img {
-width: 20vh;
-height: 20vh;
+width: 10vh;
+height: 10vh;
 
 object-fit: contain;
 }
@@ -536,8 +536,8 @@ animation: floatUpDown 4s ease-in-out infinite;
 }
 
 .bubble {
-width: 220px;
-height: 230px;
+width: 150px;
+height: 150px;
 
 border-radius: 50%;
 
