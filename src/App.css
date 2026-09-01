@@ -759,11 +759,32 @@ color: #3a2d45;
 
 /* Keep buttons at the bottom */
 
-.project-info .play-button {
- margin: 25px auto 10px auto;
-align-items: center;
+.play-button {
+  margin: 25px auto 5px auto;
+  align-self: center;
+  padding: 12px 24px;
 
-align-self: flex-start;
+  border: none;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    #ff7ac8,
+    #9b7bff
+  );
+
+  color: white;
+
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
 }
 
 /* =========================================================

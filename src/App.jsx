@@ -9,6 +9,7 @@ import Github from "./assets/github.png";
 import Email from "./assets/email.png";
 import DressUpPrev from "./assets/dress_up_preview.png";
 import PortfolioPrev from "./assets/Portfolio_preview.png";
+import TLMPrev from "./assets/TLM.png";
 
 import { useEffect, useState } from "react";
 import DressUpGame from "./components/DressUpGame";
@@ -18,6 +19,8 @@ export default function App() {
   const [gameOpen, setGameOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeSection, setActiveSection] = useState("about");
+
+  const MOVIE_SITE_URL = "https://totally-legit-movies-eight.vercel.app/";
 
   /* =========================
      COPY EMAIL
@@ -263,9 +266,11 @@ export default function App() {
               onClick={() => setSelectedProject("movie")}
             >
               <div className="project-preview">
-                {/* Replace this emoji with your Movie App
-                    preview image when you have one. */}
-                🎬
+                <img
+                  src={TLMPrev}
+                  alt="Totally Legit Movies Preview"
+                  className="project-preview-image"
+                />
               </div>
 
               <div className="project-info">
@@ -278,7 +283,20 @@ export default function App() {
                   <strong>Click to learn more!</strong>
                 </p>
 
-                <span>View Project →</span>
+                <a
+                  href={MOVIE_SITE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="play-button"
+                  onClick={(e) => e.stopPropagation()}
+                  style={{
+                    textDecoration: "none",
+                    display: "inline-block",
+                    width: "auto",
+                  }}
+                >
+                  View Project →
+                </a>
               </div>
             </div>
 
@@ -364,19 +382,38 @@ export default function App() {
 
             {selectedProject === "movie" && (
               <div className="card project-card selected-project">
-                <div className="project-preview">🎬</div>
+                <div className="project-preview">
+                  <img
+                    src={TLMPrev}
+                    alt="Totally Legit Movies Preview"
+                    className="project-preview"
+                  />
+                </div>
 
                 <div className="project-info">
-                  <h4>Movie App</h4>
+                  <h4>Movie Library</h4>
 
                   <p>
                     A movie library featuring search, sorting, and browsing
-                    using the TMDB API.
+                    using the TMDB API built with Vue.
                     <br />
                     <strong>Click to learn more!</strong>
                   </p>
 
-                  <span>View Project →</span>
+                  <a
+                    href={MOVIE_SITE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="play-button"
+                    onClick={(e) => e.stopPropagation()}
+                    style={{
+                      textDecoration: "none",
+                      display: "inline-block",
+                      width: "auto",
+                    }}
+                  >
+                    View Project →
+                  </a>
                 </div>
               </div>
             )}
