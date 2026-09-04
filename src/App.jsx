@@ -133,7 +133,7 @@ export default function App() {
             </h2>
 
             <p>
-              Computer science student passionate about programming, web
+              I'm a computer science student at TMU passionate about programming, web
               development, and building practical, interactive projects.
               I enjoy building clean, responsive websites using React and modern tools.
               I'm currently learning full-stack development and improving my UI design skills.
@@ -511,9 +511,9 @@ export default function App() {
                     This website is an outlet for my passion for 
                     programming and web development. I wanted to 
                     create a fun and colourful site to showcase some 
-                    of my projects and technical skills. The site 
-                    features hand-drawn pixel art, tying in my
-                    love for art with my passion for programming.
+                    of my projects and technical skills. I wanted
+                    this site to act as a snapshot of my skills
+                    and personality as a programmer.
                   </p>
 
                   <h4>What I Learned</h4>

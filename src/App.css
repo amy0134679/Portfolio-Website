@@ -414,11 +414,11 @@ margin-top: 25px;
 
 display: flex;
 
-gap: 12px;
+gap: 20px;
 }
 
 .btn {
-padding: 12px 22px;
+padding: 12px 22px 15px;
 
 border-radius: 999px;
 
@@ -856,12 +856,6 @@ box-sizing: border-box;
 display: flex;
 
 flex-direction: column;
-
-/*
-IMPORTANT:
-Do NOT force the left card to match
-the height of the right panel.
-*/
 
 align-self: start;
 

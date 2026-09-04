@@ -1,7 +1,11 @@
 /* =========================================================
    SKILLS SECTION
 ========================================================= */
-
+.skills-section > h3 {
+  grid-column: 1 / -1;
+  text-align: center;
+  transform: translateY(20px);
+}
 .skills-section {
   width: 100%;
   padding: 170px 5%;

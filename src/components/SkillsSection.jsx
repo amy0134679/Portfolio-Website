@@ -29,7 +29,7 @@ const SKILL_CATEGORIES = [
         icon: Java,
         isImage: true,
         description:
-          "Used in data structures coursework, and to build my dress-up game in Java Swing before porting it to React.",
+          "My first programming language, and used to build my dress-up game in Java Swing before porting it to React.",
       },
       {
         name: "JavaScript",
