@@ -23,6 +23,12 @@
   height: 550px;
   flex: 0 0 auto;
   border-radius: 32px 0 0 32px;
+
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .game-controls {

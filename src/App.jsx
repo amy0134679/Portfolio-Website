@@ -360,7 +360,7 @@ export default function App() {
                   <h4>Movie Library</h4>
 
                   <p>
-                    A movie library featuring search, sorting, and browsing
+                    A movie library featuring login, search, sorting, and browsing
                     using the TMDB API built with Vue.
                     <br />
                     <strong>Click to learn more!</strong>
