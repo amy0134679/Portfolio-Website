@@ -1,13 +1,18 @@
-
 import { useEffect, useRef, useState } from "react";
 import "./SkillsSection.css";
 
 // Images from src/assets
 import JavaScript from "../assets/JS.png";
 import HTMLCSS from "../assets/html_css.png";
-import Java from "../assets/Java.png";
-import Vue from "../assets/Vue.png";
+import Java from "../assets/java.png";
+import Vue from "../assets/vue.png";
 import Github from "../assets/github.png";
+import React from "../assets/react-logo.png";
+import Pinia from "../assets/pinia.png";
+import Python from "../assets/Python-logo.png";
+import C from "../assets/C.png";
+import Firebase from "../assets/firebase-logo.png";
+import TMDB from "../assets/TMDB.png";
 
 /**
  * Skill data, grouped by category.
@@ -35,15 +40,15 @@ const SKILL_CATEGORIES = [
       },
       {
         name: "Python",
-        icon: "🐍",
-        isImage: false,
+        icon: Python,
+        isImage: true,
         description:
           "Used for coursework, scripting, and data-focused assignments.",
       },
       {
         name: "C",
-        icon: "🔧",
-        isImage: false,
+        icon: C,
+        isImage: true,
         description:
           "Studied for systems-level programming and memory management.",
       },
@@ -55,8 +60,8 @@ const SKILL_CATEGORIES = [
     skills: [
       {
         name: "React",
-        icon: "⚛️",
-        isImage: false,
+        icon: React,
+        isImage: true,
         description:
           "Built this portfolio and my dress-up game with React function components and hooks.",
       },
@@ -89,29 +94,28 @@ const SKILL_CATEGORIES = [
       },
       {
         name: "Firebase",
-        icon: "🔥",
-        isImage: false,
+        icon: Firebase,
+        isImage: true,
         description:
           "Used for authentication and cloud storage in the Movie Library app.",
       },
       {
         name: "Pinia",
-        icon: "🍍",
-        isImage: false,
+        icon: Pinia,
+        isImage: true,
         description:
           "State management library used alongside Vue in the Movie Library app.",
       },
       {
         name: "TMDB API",
-        icon: "🎬",
-        isImage: false,
+        icon: TMDB,
+        isImage: true,
         description:
           "Fetched real movie data to power search, sorting, and browsing.",
       },
     ],
   },
 ];
-
 
 /* =========================================================
    SKILL BUBBLE
@@ -124,11 +128,11 @@ function SkillBubble({ skill }) {
 
   return (
     <div className="skill-bubble-wrapper">
-
       <div
         className="bubble skill-bubble"
         tabIndex={0}
         aria-describedby={descriptionId}
+        aria-label={skill.name}
       >
         {skill.isImage ? (
           <img src={skill.icon} alt={skill.name} />
@@ -137,24 +141,16 @@ function SkillBubble({ skill }) {
             {skill.icon}
           </span>
         )}
-
-        <span className="skill-name">{skill.name}</span>
       </div>
 
       {/* Tooltip */}
-      <div
-        className="skill-tooltip"
-        id={descriptionId}
-        role="tooltip"
-      >
+      <div className="skill-tooltip" id={descriptionId} role="tooltip">
         <strong>{skill.name}</strong>
         <p>{skill.description}</p>
       </div>
-
     </div>
   );
 }
-
 
 /* =========================================================
    CATEGORY ROW
@@ -168,11 +164,9 @@ function SkillCategoryRow({ category }) {
 
   const updateScrollState = () => {
     const row = rowRef.current;
-
     if (!row) return;
 
     setCanScrollLeft(row.scrollLeft > 4);
-
     setCanScrollRight(
       row.scrollLeft + row.clientWidth < row.scrollWidth - 4
     );
@@ -180,9 +174,7 @@ function SkillCategoryRow({ category }) {
 
   useEffect(() => {
     updateScrollState();
-
     window.addEventListener("resize", updateScrollState);
-
     return () => {
       window.removeEventListener("resize", updateScrollState);
     };
@@ -197,13 +189,9 @@ function SkillCategoryRow({ category }) {
 
   return (
     <div className="skill-category">
-
-      <h4 className="skill-category-title">
-        {category.title}
-      </h4>
+      <h4 className="skill-category-title">{category.title}</h4>
 
       <div className="skill-row-wrapper">
-
         <button
           type="button"
           className="skill-scroll-button skill-scroll-left"
@@ -220,10 +208,7 @@ function SkillCategoryRow({ category }) {
           onScroll={updateScrollState}
         >
           {category.skills.map((skill) => (
-            <SkillBubble
-              key={skill.name}
-              skill={skill}
-            />
+            <SkillBubble key={skill.name} skill={skill} />
           ))}
         </div>
 
@@ -236,12 +221,10 @@ function SkillCategoryRow({ category }) {
         >
           ›
         </button>
-
       </div>
     </div>
   );
 }
-
 
 /* =========================================================
    SKILLS SECTION
@@ -250,17 +233,11 @@ function SkillCategoryRow({ category }) {
 export default function SkillsSection() {
   return (
     <section id="skills" className="section skills-section">
-
       <h3>Technical Skills</h3>
 
       {SKILL_CATEGORIES.map((category) => (
-        <SkillCategoryRow
-          key={category.title}
-          category={category}
-        />
+        <SkillCategoryRow key={category.title} category={category} />
       ))}
-
     </section>
   );
 }
-
