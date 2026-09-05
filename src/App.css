@@ -1192,21 +1192,13 @@ color: var(--text-h);
 }
 
 .contact-button {
-width: 100%;
-
-border: none;
-
-background: transparent;
-
-padding: 3px;
-
-text-align: center;
-
-align-items: center;
-
-cursor: pointer;
-
-font: inherit;
+  width: 100%;
+  border: none;
+  background: transparent;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
 }
 
 .contact-button:focus-visible {

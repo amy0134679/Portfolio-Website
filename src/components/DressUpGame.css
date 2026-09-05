@@ -100,7 +100,7 @@
   height: 350px;
   overflow: visible;
   position: relative;
-  transform: translateY(130px);
+  transform: translateY(50px);
   z-index: 1;
   filter: drop-shadow(0 12px 10px rgba(0, 0, 0, 0.15));
 }
