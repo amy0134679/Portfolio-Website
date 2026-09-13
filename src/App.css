@@ -174,10 +174,10 @@ justify-content: space-between;
 align-items: center;
 
 padding: 10px 15px;
-margin: 15px 15px;
+margin: 5px 15px;
 
 position: fixed;
-top: 10px;
+top: 5px;
 
 z-index: 1000;
 }
@@ -245,7 +245,7 @@ transform: translateY(-2px);
 }
 
 .nav-links a.active {
-padding: 8px 10px;
+padding: 5x 10px;
 color: #ff7ac8;
 position: relative;
 }
@@ -705,16 +705,13 @@ PROJECT PREVIEW
 .game-preview {
 width: 100%;
 
-height: clamp(170px, 20vw, 240px);
+height: clamp(150px, 15vw, 230px);
 
 overflow: hidden;
 
 flex-shrink: 0;
 
 background: rgba(255, 255, 255, 0.2);
-
-border-radius: 20px 20px 0 0;
-
 display: block;
 }
 
@@ -737,7 +734,7 @@ PROJECT INFORMATION
 ========================================================= */
 
 .project-info {
-padding: 10px 22px 22px;
+padding: 5px 15px 15px;
 display: flex;
 flex-direction: column;
 flex: 1;
@@ -746,11 +743,11 @@ flex: 1;
 .project-info h4 {
 font-size: 20px;
 color: #2b2233;
-margin-bottom: 5px;
+margin-bottom: 3px;
 }
 
 .project-info p {
-padding: 15px;
+padding: 5px;
 font-size: 15px;
 line-height: 1.9;
 padding-bottom: 5px;
@@ -760,14 +757,9 @@ color: #3a2d45;
 /* Keep buttons at the bottom */
 
 .play-button {
-  margin: 25px auto 5px auto;
   align-self: center;
   padding: 12px 24px;
-
   border: none;
-
-  border-radius: 999px;
-
   background: linear-gradient(
     135deg,
     #ff7ac8,
@@ -1260,7 +1252,7 @@ on medium screens.
 .game-preview,
 .selected-project .project-preview,
 .selected-project .game-preview {
-height: clamp(160px, 24vw, 210px);
+height: clamp(130px, 20vw, 200px);
 }
 }
 
@@ -1273,7 +1265,7 @@ TABLET / MOBILE
 /* NAV */
 
 .navbar {
-margin: 10px;
+margin: 15x;
 }
 
 .nav-links a {
