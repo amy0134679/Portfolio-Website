@@ -89,9 +89,6 @@ export default function App() {
       ========================= */}
 
       <nav className="navbar">
-        <h1 className="logo">
-          Amy<span>.</span>
-        </h1>
 
         <div className="nav-links">
           <a href="#home" className={activeSection === "home" ? "active" : ""}>

@@ -16,6 +16,13 @@ font-size: 100%;
 }
 
 body {
+overflow-x: hidden;   
+  background: linear-gradient(       
+    166deg,
+    #f7e7a9 0%,
+    #ffd6f3 40%,
+    #cbb6ff 100%
+  );
 scroll-padding-top: 80px;
 scroll-snap-type: y proximity;
 line-height: 1.6;
@@ -1243,6 +1250,9 @@ width: 180px;
 height: 190px;
 }
 
+  .app {
+    padding-top: 120px; /* increase until it clears the navbar */
+  } 
 /*
 Slightly smaller project preview
 on medium screens.
@@ -1337,11 +1347,9 @@ height: clamp(160px, 48vw, 230px);
 .expanded-project {
 width: 90%;
 
-
 grid-template-columns: 1fr;
 
 gap: 20px;
-
 
 }
 
